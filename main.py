@@ -1,40 +1,42 @@
-#My name is Kira Yoshikage
-#Benny
-#testing
-#indira
-#nour
-
 import random
-#Benny
-#testing
-#indira
+score = 0
+total = 0
 
 num1 = random.randint(1,100)
 num2 = random.randint(1,100)
-num3 = random.randint(-100,50)
-num4 = random.randint(-100,100)
-num5 = random.randint(1,100)
-num6 = random.randint(1,100)
+num3 = random.randint(-100, -1)
+num4 = random.randint(-100, -1)
+num5 = random.randint(1, 15)
+x = random.randint(-100, 100)
+
+sum1 = num1*x+num2
+dif1 = num2*x-num1
+
+
 eigth_questions = {
     "question1": f"What is the greatest common factor of {num1} and {num2}?",
-    "question2" :f"{num1}+x={num2}",
-    "question3" : f"{num2}+x={num1}"
+    "question2" :f"{num1}{x} + {num2} = {sum1}. What is 'x'?",
+    "question3" : f"{num2}{x} - {num1} = {dif1}. What does 'x' equal to?"
 }
+
 seventh_questions = {
-    "question1" : "{num3} - {num4}" 
-    "question2" : "{num4} + {num3}" 
-    "question3" : "{num3}+ {num4}"
+    "question1": f"What is {num4} minus {num3}?", 
+    "question2": f"What is {num3} + {num4}?",
+    "question3": f"{num4} divided by {num3}.",
+    "question4": f"{num3} times {num4} equals: "
 }
-sixith_questions  = {
-    "question1" : "{num5}**2"
-    "question2" : "{num6}**3"
-    "question3" : "{num6}**4"
+
+sixith_questions = {
+    "question1": f"What is {num5} to the second power?",
+    "question2": f"What is {num5} to the third power?",
+    "question3": f"What is {num5} to the fourth power?"
 }
+
+
 
 def generate_question():
     pass
     
-
 def generate_ans(ans):
     
 def add():
@@ -52,9 +54,8 @@ def divide():
 def multiply():
     ans = num1*num2
     return 
-import random
-score = 0
-total = 0
+
+
 
 
 answers_dict = {
@@ -93,7 +94,7 @@ def check_ans():
 # ----------Game Start----------
 
 print("Hello! \n")
-print("Studying Math using a textbook is boring isn't it? \n")
+print("Studying for your math exams using a textbook is boring isn't it? \n")
 print("Let's play a minigame! 😃 \n")
 
 active = True
@@ -128,5 +129,5 @@ elif user_grade == "7":
 elif user_grade == "8":
     print("The math topic this minigame will cover is: Numbers and operations, and solving equations with one unknown variable. \n")
 else:
-    print("How did you get this line??? \n")
+    print("How did you get this line??? This isn't supposed to happen.\n")
 
