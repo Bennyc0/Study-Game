@@ -1,13 +1,15 @@
 import random
+import math
 score = 0
 total = 0
 
-num1 = random.randint(1,100)
-num2 = random.randint(1,100)
+
+num1 = random.randint(1,101)
+num2 = random.randint(1,101)
 num3 = random.randint(-100, -1)
 num4 = random.randint(-100, -1)
-num5 = random.randint(1, 15)
-x = random.randint(-100, 100)
+num5 = random.randint(1, 16)
+x = random.randint(1,101)
 
 sum1 = num1*x+num2
 dif1 = num2*x-num1
@@ -44,25 +46,48 @@ def generate_question():
     elif user_grade == "8":
         var = random.choice (list(eigth_questions.values()))
         print (var) 
-    
+
+
+def solvex():
+    global num1
+    global num2
+    global sum1
+    global dif1
+
+    first = sum1 - num2 
+    second = first // num1
+
+
+    third = sum1 + num1 
+    fourth = third // num2 
+
 def generate_ans(ans):
 
-    
-def add():
-    ans = num1 + num2
+def eighth(ans):
+    global num1
+    global num2
+
+    if generate_question == eigth_questions["question1"]:
+        print(math.gcd(num1, num2))    
+    elif generate_question == eigth_questions["question2"]:
+        
+    elif generate_question == eigth_questions["question2"]:
+
+def add(ans):
+    ans = num3 + num4
+    return ans
+
+def subtract(ans):
+    ans = num3 - num4
+    return ans
+
+def divide(ans):
+    ans = num3 // num4
     return 
 
-def subtract():
-    ans = num1 - num2
-    return 
-
-def divide():
-    ans = num1 // num2
-    return 
-
-def multiply():
-    ans = num1*num2
-    return 
+def multiply(ans):
+    ans = num3*num4
+    return ans
 
 
 
