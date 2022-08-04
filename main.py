@@ -35,9 +35,18 @@ sixith_questions = {
 
 
 def generate_question():
-    pass
+    if user_grade == "6":
+        var = random.choice (list(sixith_questions.values()))
+        print (var) 
+    elif user_grade == "7":
+        var = random.choice (list(seventh_questions.values()))
+        print (var) 
+    elif user_grade == "8":
+        var = random.choice (list(eigth_questions.values()))
+        print (var) 
     
 def generate_ans(ans):
+
     
 def add():
     ans = num1 + num2
