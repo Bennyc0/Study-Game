@@ -28,7 +28,7 @@ seventh_questions = {
 
 sixith_questions = {
     "question1": f"What is {num5} to the second power?",
-    "question2": f"What is {num5} to the third power?",
+    "question2": f"{num5} to the third power is: ",
     "question3": f"What is {num5} to the fourth power?"
 }
 
@@ -67,6 +67,8 @@ answers_dict = {
 
 
 def check_ans():
+    global score
+    global total
     active = True
     
     while active:
@@ -131,3 +133,15 @@ elif user_grade == "8":
 else:
     print("How did you get this line??? This isn't supposed to happen.\n")
 
+
+while total <= 10:
+    #generate question function
+    #generate answer function
+    #check answer function
+
+if total == 10 and score >= 7:
+    print(f"Congratulations! 🥳🥳🥳 \nYou've completed the minigame for {user_grade}th grade! \nSince you scored {score} out of 10, you will be fine on any topic on exams that was covered in this minigame!") 
+elif total == 10 and score < 7:
+    print(f"Sorry, but it seems that you need to study a bit more. You only got {score} out of 10 questions correct. \nSuggested actions would be to try again and try to get your grade to where you are satisfied. Good Luck!")
+else:
+    print("Please finish the 10 questions first.(Also this isn't supposed to happen)")
