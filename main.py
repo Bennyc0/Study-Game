@@ -15,8 +15,8 @@ dif1 = num2*x-num1
 
 eigth_questions = {
     "question1": f"What is the greatest common factor of {num1} and {num2}?",
-    "question2" :f"{num1}{x} + {num2} = {sum1}. What is 'x'?",
-    "question3" : f"{num2}{x} - {num1} = {dif1}. What does 'x' equal to?"
+    "question2": f"{num1}{x} + {num2} = {sum1}. What is 'x'?",
+    "question3": f"{num2}{x} - {num1} = {dif1}. What does 'x' equal to?"
 }
 
 seventh_questions = {
