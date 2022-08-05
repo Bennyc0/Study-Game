@@ -8,13 +8,12 @@ num1 = random.randint(1,101)
 num2 = random.randint(1,101)
 num3 = random.randint(-100, -1)
 num4 = random.randint(-100, -1)
-num5 = random.randint(1, 16)
-x = random.randint(1,101)
+num5 = random.randint(1, 15)
+x = random.randint(1,100)
 
 sum1 = num1*x+num2
 dif1 = num2*x-num1
-
-
+ 
 
 
 
@@ -52,59 +51,28 @@ def generate_question():
 
 
 def eighth(question):
-    global num1
-    global num2
-    global second
-    global fourth
- 
     if question == eigth_questions["question1"]:
-        print(math.gcd(num1, num2))    
-    elif question == eigth_questions["question2"]:
-        print(x)
+        return math.gcd(num1, num2) 
+    elif question == eight_question["question2"]:
+        return x
     elif question == eigth_questions["question3"]:
-        print(x)
+        return x
 
-def seventh(question):
-    global num3
-    global num4
-
-    if question == seventh_questions["question1"]:
-        print(num4 - num3)    
-    elif question == seventh_questions["question2"]:
-        print(num3 + num4)
-    elif question == seventh_questions["question3"]:
-        print(num4 / num3)
-    elif question == seventh_questions["question4"]:
-        print(num3*num4)
+def sixith(question):
+    if question == sixith_questions["question1"]:
+        return num5**2   
+    elif question == sixith_question["question2"]:
+        return num5**3
+    elif question == sixith_question["question3"]:
+        return num5**4
 
 
-
-# def generate_ans(ans):
- 
-
-#     def add(ans):
-#         ans = num3 + num4
-#         return ans
-
-#     def subtract(ans):
-#         ans = num3 - num4
-#         return ans
-
-#     def divide(ans):
-#         ans = num3 / num4
-#         return 
-
-#     def multiply(ans):
-#         ans = num3*num4
-#         return ans
+def generate_ans(ans):
 
 
+answers_choice = [ans1, ans2, ans3, ans4]
+correct_ans_var = random.choice(answers_choice)
 
-
-ans1 = 3
-ans2 = 7
-ans3 = 9
-ans4 = 10
 
 
 answers_dict = {
@@ -186,8 +154,6 @@ else:
 while total <= 10:
     question = generate_question()
     print(question)
-    eighth(question)
-    seventh(question)
     #generate answer function
     check_ans()
 
