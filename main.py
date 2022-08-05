@@ -55,10 +55,11 @@ def generate_question():
         return question
 
 
-def eighth():
+def eighth(question):
     global num1
     global num2
 
+<<<<<<< HEAD
     for problem in eigth_questions:
         if generate_question() == eigth_questions["question1"]:
             print(math.gcd(num1, num2))    
@@ -66,26 +67,36 @@ def eighth():
             print(x)
     # elif generate_question() == eigth_questions["question3"]:
     #     print(x)
+=======
 
 
-def generate_ans(ans):
+    if question == eigth_questions["question1"]:
+        print(math.gcd(num1, num2))    
+    elif question == eigth_questions["question2"]:
+        print(x)
+    elif question == eigth_questions["question3"]:
+        print(x)
+>>>>>>> 8ba92b027e54bca370e04f64e1e20324963cba7c
+
+
+# def generate_ans(ans):
  
 
-    def add(ans):
-        ans = num3 + num4
-        return ans
+#     def add(ans):
+#         ans = num3 + num4
+#         return ans
 
-    def subtract(ans):
-        ans = num3 - num4
-        return ans
+#     def subtract(ans):
+#         ans = num3 - num4
+#         return ans
 
-    def divide(ans):
-        ans = num3 / num4
-        return 
+#     def divide(ans):
+#         ans = num3 / num4
+#         return 
 
-    def multiply(ans):
-        ans = num3*num4
-        return ans
+#     def multiply(ans):
+#         ans = num3*num4
+#         return ans
 
 
 
@@ -175,7 +186,7 @@ else:
 while total <= 10:
     question = generate_question()
     print(question)
-    eighth()
+    eighth(question)
     #generate answer function
     check_ans()
 
