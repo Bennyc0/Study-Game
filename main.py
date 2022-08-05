@@ -64,6 +64,14 @@ def eighth(question):
     elif question == eigth_questions["question3"]:
         print(x)
 
+def sixith(question):
+    if question == sixith_questions["question1"]:
+        return num5**2   
+    elif question == sixith_question["question2"]:
+        return num5**3
+    elif question == sixith_question["question3"]:
+        return num5**4
+
 def seventh(question):
     global num3
     global num4
