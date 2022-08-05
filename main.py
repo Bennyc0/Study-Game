@@ -14,11 +14,7 @@ x = random.randint(1,101)
 sum1 = num1*x+num2
 dif1 = num2*x-num1
 
-first = sum1 - num2 
-second = first / num1
 
-third = sum1 + num1 
-fourth = third / num2 
 
 
 
@@ -69,6 +65,20 @@ def eighth(question):
         print(x)
     elif question == eigth_questions["question3"]:
         print(x)
+
+def seventh(question):
+    global num3
+    global num4
+
+    if question == seventh_questions["question1"]:
+        print(num4 - num3)    
+    elif question == seventh_questions["question2"]:
+        print(num3 + num4)
+    elif question == seventh_questions["question3"]:
+        print(num4 / num3)
+    elif question == seventh_questions["question4"]:
+        print(num3*num4)
+
 
 
 # def generate_ans(ans):
