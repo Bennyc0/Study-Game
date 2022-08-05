@@ -56,9 +56,7 @@ def eighth(question):
     global num2
     global second
     global fourth
-
-
-
+ 
     if question == eigth_questions["question1"]:
         print(math.gcd(num1, num2))    
     elif question == eigth_questions["question2"]:
@@ -189,6 +187,7 @@ while total <= 10:
     question = generate_question()
     print(question)
     eighth(question)
+    seventh(question)
     #generate answer function
     check_ans()
 
