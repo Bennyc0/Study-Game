@@ -2,7 +2,7 @@ import random
 import math
 score = 0
 total = 0
-
+correct_ans = 0
 
 num1 = random.randint(1,101)
 num2 = random.randint(1,101)
@@ -11,12 +11,10 @@ num4 = random.randint(-100, -1)
 num5 = random.randint(1, 15)
 x = random.randint(1,100)
 
+
 sum1 = num1*x+num2
 dif1 = num2*x-num1
  
-
-
-
 eigth_questions = {
     "question1": f"What is the greatest common factor of {num1} and {num2}?",
     "question2": f"{num1}x + {num2} = {sum1}. What is 'x'?",
@@ -49,64 +47,90 @@ def generate_question():
         question = random.choice (list(eigth_questions.values()))
         return question
 
-
 def eighth(question):
+    global x
     if question == eigth_questions["question1"]:
         return math.gcd(num1, num2) 
-    elif question == eight_question["question2"]:
+    elif question == eigth_questions["question2"]:
         return x
     elif question == eigth_questions["question3"]:
         return x
 
+def seventh(question):
+    if question == seventh_questions["question1"]:
+        return num4 - num3  
+    elif question == seventh_questions["question2"]:
+        return num3 + num4
+    elif question == seventh_questions["question3"]:
+        return num4 / num3
+    elif question == seventh_questions["question4"]:
+        return num3*num4
+
 def sixith(question):
     if question == sixith_questions["question1"]:
         return num5**2   
-    elif question == sixith_question["question2"]:
+    elif question == sixith_questions["question2"]:
         return num5**3
-    elif question == sixith_question["question3"]:
+    elif question == sixith_questions["question3"]:
         return num5**4
 
+ans_list = []
 
-def generate_ans(ans):
+def generate_ans(question):
+    global ans_list
+    global correct_ans
+    #question = generate_question()
 
+    if user_grade == "6":
+        correct_ans = sixith(question)
+    elif user_grade == "7":
+        correct_ans = seventh(question)
+    elif user_grade == "8":
+        correct_ans = eighth(question)
 
-answers_choice = [ans1, ans2, ans3, ans4]
-correct_ans_var = random.choice(answers_choice)
+    extra_num1 = random.randint(-10, -1)
+    extra_num2 = random.randint(1, 10)
+    extra_num3 = random.randint(1, 10)
 
+    ans1 = correct_ans+extra_num1+1
+    ans2 = correct_ans
+    ans3 = correct_ans+extra_num2 +1
+    ans4 = correct_ans+extra_num3+1
 
+    ans_list = [ans1, ans2, ans3, ans4]
+    random.shuffle(ans_list)
 
-answers_dict = {
-    "1": ans1,
-    "2": ans2,
-    "3": ans3,
-    "4": ans4
-}
+    print(f"Option 1: {ans_list[0]} \nOption 2: {ans_list[1]} \nOption 3: {ans_list[2]} \nOption 4: {ans_list[3]}")
+
 
 
 def check_ans():
     global score
     global total
+    global correct_ans
+    global ans_list
     active = True
+
+    user_answer = ""
     
     while active:
         user_answer = input("What option do you choose?(1, 2, 3, or 4)>> ")
         print("\n")
 
         if user_answer.isdigit() and int(user_answer) <= 4 and int(user_answer) > 0:
-            for answer in answers_dict:
-                if answer == user_answer:
-                    active = False
-                    user_answer = answers_dict.get(answer)
+            index = int(user_answer)-1
+            user_answer = ans_list[index]
+            active = False
         else:
             print("Please type 1, 2, 3, or 4. \n")
-
 
     if user_answer == correct_ans:
         score += 1
         total += 1
-        print("You got the right answer!")
+        print("You got the right answer! \n")
     else:
-        print(f"The answer was {correct_ans}.")
+        print(f"The answer was {correct_ans}. \n")
+        total += 1
     
 
 
@@ -151,15 +175,45 @@ else:
     print("How did you get this line??? This isn't supposed to happen.\n")
 
 
-while total <= 10:
+while total < 10:
+    num1 = random.randint(1,101)
+    num2 = random.randint(1,101)
+    num3 = random.randint(-100, -1)
+    num4 = random.randint(-100, -1)
+    num5 = random.randint(1, 15)
+    x = random.randint(1,100)
+
+    sum1 = num1*x+num2
+    dif1 = num2*x-num1
+
+    eigth_questions = {
+        "question1": f"What is the greatest common factor of {num1} and {num2}?",
+        "question2": f"{num1}x + {num2} = {sum1}. What is 'x'?",
+        "question3": f"{num2}x - {num1} = {dif1}. What does 'x' equal to?"
+    }
+
+    seventh_questions = {
+        "question1": f"What is {num4} minus {num3}?", 
+        "question2": f"What is {num3} + {num4}?",
+        "question3": f"{num4} divided by {num3}.",
+        "question4": f"{num3} times {num4} equals: "
+    }
+
+    sixith_questions = {
+        "question1": f"What is {num5} to the second power?",
+        "question2": f"{num5} to the third power is: ",
+        "question3": f"What is {num5} to the fourth power?"
+    }
+
     question = generate_question()
     print(question)
-    #generate answer function
+    generate_ans(question)
     check_ans()
 
+
 if total == 10 and score >= 7:
-    print(f"Congratulations! 🥳🥳🥳 \nYou've completed the minigame for {user_grade}th grade! \nSince you scored {score} out of 10, you will be fine on any topic on exams that was covered in this minigame!") 
+    print(f"Congratulations! 🥳🥳🥳 \nYou've completed the minigame for {user_grade}th grade! \nSince you scored {score} out of 10, you will be fine on any topic on exams that was covered in this minigame! \n") 
 elif total == 10 and score < 7:
-    print(f"Sorry, but it seems that you need to study a bit more. You only got {score} out of 10 questions correct. \nSuggested actions would be to try again and try to get your grade to where you are satisfied. Good Luck!")
+    print(f"Sorry, but it seems that you need to study a bit more. You only got {score} out of 10 questions correct. \nSuggested actions would be to try again and try to get your grade to where you are satisfied. Good Luck! \n")
 else:
     print("Please finish the 10 questions first.(Also this isn't supposed to happen)")
