@@ -13,12 +13,7 @@ x = random.randint(1,100)
 
 sum1 = num1*x+num2
 dif1 = num2*x-num1
-
-first = sum1 - num2 
-second = first / num1
-
-third = sum1 + num1 
-fourth = third / num2 
+ 
 
 
 
@@ -73,36 +68,11 @@ def sixith(question):
 
 
 def generate_ans(ans):
-    global ans1
-    global ans2
-    global ans3
-    global ans4
-    
-    question = generate_question()
-    
-
-    if user_grade == "8":
-        eighth(question)
-    elif user_grade == "7":
-        seventh(question)
-    elif user_grade == "6":
-        sixith(question)
-    else:
-        print("---<Aborting...>---")
 
 
-    while choices <= 4:
-        extra_num = random.randint(1, 5)
+answers_choice = [ans1, ans2, ans3, ans4]
+correct_ans_var = random.choice(answers_choice)
 
-        if user_grade == "8":
-            eighth(question)
-            ans1 = eight(question)+
-        elif user_grade == "7":
-            seventh(question)
-        elif user_grade == "6":
-            sixith(question)
-
-        
 
 
 answers_dict = {
