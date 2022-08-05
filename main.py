@@ -45,19 +45,21 @@ sixith_questions = {
 
 def generate_question():
     if user_grade == "6":
-        var = random.choice (list(sixith_questions.values()))
-        print (var) 
+        question = random.choice (list(sixith_questions.values()))
+        return question
     elif user_grade == "7":
-        var = random.choice (list(seventh_questions.values()))
-        print (var) 
+        question = random.choice (list(seventh_questions.values()))
+        return question
     elif user_grade == "8":
-        var = random.choice (list(eigth_questions.values()))
-        print (var) 
+        question = random.choice (list(eigth_questions.values()))
+        return question
 
 
 def eighth():
     global num1
     global num2
+    global second
+    global fourth
 
     if generate_question() == eigth_questions["question1"]:
         print(math.gcd(num1, num2))    
@@ -68,6 +70,7 @@ def eighth():
 
 
 def generate_ans(ans):
+ 
 
     def add(ans):
         ans = num3 + num4
@@ -84,6 +87,7 @@ def generate_ans(ans):
     def multiply(ans):
         ans = num3*num4
         return ans
+
 
 
 
@@ -110,11 +114,11 @@ def check_ans():
         user_answer = input("What option do you choose?(1, 2, 3, or 4)>> ")
         print("\n")
 
-        if user_answer.isdigit() and int(user_answer) <= 4:
-            for answer in answers_dict:
-                if answer == user_answer:
-                    active = False
-                    user_answer = answers_dict.get(answer)
+        if user_answer.isdigit() and int(user_answer) <= 4 and int(user_answer) > 0:
+            for answer in answers_dict
+            if answer == user_answer:
+                active = False
+                user_answer = answers_dict.get(answer)
         else:
             print("Please type 1, 2, 3, or 4. \n")
 
@@ -175,7 +179,6 @@ while total <= 10:
     eighth()
     #generate answer function
     check_ans()
-
 
 if total == 10 and score >= 7:
     print(f"Congratulations! 🥳🥳🥳 \nYou've completed the minigame for {user_grade}th grade! \nSince you scored {score} out of 10, you will be fine on any topic on exams that was covered in this minigame!") 

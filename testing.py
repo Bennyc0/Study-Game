@@ -1,4 +1,4 @@
-# import random
+import random
 # random1 = random.randint(-100, 0)
 
 # print(random)
