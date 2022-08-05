@@ -14,11 +14,18 @@ x = random.randint(1,101)
 sum1 = num1*x+num2
 dif1 = num2*x-num1
 
+first = sum1 - num2 
+second = first / num1
+
+third = sum1 + num1 
+fourth = third / num2 
+
+
 
 eigth_questions = {
     "question1": f"What is the greatest common factor of {num1} and {num2}?",
-    "question2": f"{num1}{x} + {num2} = {sum1}. What is 'x'?",
-    "question3": f"{num2}{x} - {num1} = {dif1}. What does 'x' equal to?"
+    "question2": f"{num1}x + {num2} = {sum1}. What is 'x'?",
+    "question3": f"{num2}x - {num1} = {dif1}. What does 'x' equal to?"
 }
 
 seventh_questions = {
@@ -48,48 +55,42 @@ def generate_question():
         print (var) 
 
 
-def solvex():
+def eighth():
     global num1
     global num2
-    global sum1
-    global dif1
 
-    first = sum1 - num2 
-    second = first // num1
+    if generate_question() == eigth_questions["question1"]:
+        print(math.gcd(num1, num2))    
+    elif generate_question() == eigth_questions["question2"]:
+        print(second)
+    elif generate_question() == eigth_questions["question3"]:
+        print(fourth)
 
-
-    third = sum1 + num1 
-    fourth = third // num2 
 
 def generate_ans(ans):
 
-def eighth(ans):
-    global num1
-    global num2
+    def add(ans):
+        ans = num3 + num4
+        return ans
 
-    if generate_question == eigth_questions["question1"]:
-        print(math.gcd(num1, num2))    
-    elif generate_question == eigth_questions["question2"]:
-        
-    elif generate_question == eigth_questions["question2"]:
+    def subtract(ans):
+        ans = num3 - num4
+        return ans
 
-def add(ans):
-    ans = num3 + num4
-    return ans
+    def divide(ans):
+        ans = num3 / num4
+        return 
 
-def subtract(ans):
-    ans = num3 - num4
-    return ans
-
-def divide(ans):
-    ans = num3 // num4
-    return 
-
-def multiply(ans):
-    ans = num3*num4
-    return ans
+    def multiply(ans):
+        ans = num3*num4
+        return ans
 
 
+
+ans1 = 3
+ans2 = 7
+ans3 = 9
+ans4 = 10
 
 
 answers_dict = {
@@ -110,10 +111,10 @@ def check_ans():
         print("\n")
 
         if user_answer.isdigit() and int(user_answer) <= 4:
-            for answer in answers_dict
-            if answer == user_answer:
-                active = False
-                user_answer = answers_dict.get(answer)
+            for answer in answers_dict:
+                if answer == user_answer:
+                    active = False
+                    user_answer = answers_dict.get(answer)
         else:
             print("Please type 1, 2, 3, or 4. \n")
 
@@ -169,9 +170,12 @@ else:
 
 
 while total <= 10:
-    #generate question function
+    question = generate_question()
+    print(question)
+    eighth()
     #generate answer function
-    #check answer function
+    check_ans()
+
 
 if total == 10 and score >= 7:
     print(f"Congratulations! 🥳🥳🥳 \nYou've completed the minigame for {user_grade}th grade! \nSince you scored {score} out of 10, you will be fine on any topic on exams that was covered in this minigame!") 
