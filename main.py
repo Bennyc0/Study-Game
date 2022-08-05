@@ -8,8 +8,8 @@ num1 = random.randint(1,101)
 num2 = random.randint(1,101)
 num3 = random.randint(-100, -1)
 num4 = random.randint(-100, -1)
-num5 = random.randint(1, 16)
-x = random.randint(1,101)
+num5 = random.randint(1, 15)
+x = random.randint(1,100)
 
 sum1 = num1*x+num2
 dif1 = num2*x-num1
@@ -58,15 +58,14 @@ def generate_question():
 def eighth():
     global num1
     global num2
-    global second
-    global fourth
 
-    if generate_question() == eigth_questions["question1"]:
-        print(math.gcd(num1, num2))    
-    elif generate_question() == eigth_questions["question2"]:
-        print(second)
-    elif generate_question() == eigth_questions["question3"]:
-        print(fourth)
+    for problem in eigth_questions:
+        if generate_question() == eigth_questions["question1"]:
+            print(math.gcd(num1, num2))    
+        elif generate_question() == problem:
+            print(x)
+    # elif generate_question() == eigth_questions["question3"]:
+    #     print(x)
 
 
 def generate_ans(ans):
@@ -115,10 +114,10 @@ def check_ans():
         print("\n")
 
         if user_answer.isdigit() and int(user_answer) <= 4 and int(user_answer) > 0:
-            for answer in answers_dict
-            if answer == user_answer:
-                active = False
-                user_answer = answers_dict.get(answer)
+            for answer in answers_dict:
+                if answer == user_answer:
+                    active = False
+                    user_answer = answers_dict.get(answer)
         else:
             print("Please type 1, 2, 3, or 4. \n")
 
