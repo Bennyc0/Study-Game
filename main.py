@@ -38,14 +38,14 @@ sixith_questions = {
 
 def generate_question():
     if user_grade == "6":
-        var = random.choice (list(sixith_questions.values()))
-        print (var) 
+        question = random.choice (list(sixith_questions.values()))
+        return question
     elif user_grade == "7":
-        var = random.choice (list(seventh_questions.values()))
-        print (var) 
+        question = random.choice (list(seventh_questions.values()))
+        return question
     elif user_grade == "8":
-        var = random.choice (list(eigth_questions.values()))
-        print (var) 
+        question = random.choice (list(eigth_questions.values()))
+        return question
 
 
 def solvex():
@@ -54,24 +54,24 @@ def solvex():
     global sum1
     global dif1
 
-    first = sum1 - num2 
-    second = first // num1
+    first = sum1-num2 
+    second = first/num1
+    third = sum1+num1 
+    fourth = third/num2 
 
-
-    third = sum1 + num1 
-    fourth = third // num2 
 
 def generate_ans(ans):
+ 
 
 def eighth(ans):
     global num1
     global num2
 
-    if generate_question == eigth_questions["question1"]:
+    if generate_question() == eigth_questions["question1"]:
         print(math.gcd(num1, num2))    
-    elif generate_question == eigth_questions["question2"]:
+    elif generate_question() == eigth_questions["question2"]:
         
-    elif generate_question == eigth_questions["question2"]:
+    elif generate_question() == eigth_questions["question2"]:
 
 def add(ans):
     ans = num3 + num4
@@ -82,8 +82,8 @@ def subtract(ans):
     return ans
 
 def divide(ans):
-    ans = num3 // num4
-    return 
+    ans = num3 / num4
+    return ans
 
 def multiply(ans):
     ans = num3*num4
@@ -109,7 +109,7 @@ def check_ans():
         user_answer = input("What option do you choose?(1, 2, 3, or 4)>> ")
         print("\n")
 
-        if user_answer.isdigit() and int(user_answer) <= 4:
+        if user_answer.isdigit() and int(user_answer) <= 4 and int(user_answer) > 0:
             for answer in answers_dict
             if answer == user_answer:
                 active = False
@@ -169,9 +169,11 @@ else:
 
 
 while total <= 10:
-    #generate question function
+    print_question = generate_question()
+    print(print_question)
+
     #generate answer function
-    #check answer function
+    check_ans()
 
 if total == 10 and score >= 7:
     print(f"Congratulations! 🥳🥳🥳 \nYou've completed the minigame for {user_grade}th grade! \nSince you scored {score} out of 10, you will be fine on any topic on exams that was covered in this minigame!") 
