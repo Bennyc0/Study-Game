@@ -55,38 +55,40 @@ def generate_question():
         return question
 
 
-def eighth():
+def eighth(question):
     global num1
     global num2
     global second
     global fourth
 
-    if generate_question() == eigth_questions["question1"]:
+
+
+    if question == eigth_questions["question1"]:
         print(math.gcd(num1, num2))    
-    elif generate_question() == eigth_questions["question2"]:
-        print(second)
-    elif generate_question() == eigth_questions["question3"]:
-        print(fourth)
+    elif question == eigth_questions["question2"]:
+        print(x)
+    elif question == eigth_questions["question3"]:
+        print(x)
 
 
-def generate_ans(ans):
+# def generate_ans(ans):
  
 
-    def add(ans):
-        ans = num3 + num4
-        return ans
+#     def add(ans):
+#         ans = num3 + num4
+#         return ans
 
-    def subtract(ans):
-        ans = num3 - num4
-        return ans
+#     def subtract(ans):
+#         ans = num3 - num4
+#         return ans
 
-    def divide(ans):
-        ans = num3 / num4
-        return 
+#     def divide(ans):
+#         ans = num3 / num4
+#         return 
 
-    def multiply(ans):
-        ans = num3*num4
-        return ans
+#     def multiply(ans):
+#         ans = num3*num4
+#         return ans
 
 
 
@@ -115,10 +117,10 @@ def check_ans():
         print("\n")
 
         if user_answer.isdigit() and int(user_answer) <= 4 and int(user_answer) > 0:
-            for answer in answers_dict
-            if answer == user_answer:
-                active = False
-                user_answer = answers_dict.get(answer)
+            for answer in answers_dict:
+                if answer == user_answer:
+                    active = False
+                    user_answer = answers_dict.get(answer)
         else:
             print("Please type 1, 2, 3, or 4. \n")
 
@@ -176,7 +178,7 @@ else:
 while total <= 10:
     question = generate_question()
     print(question)
-    eighth()
+    eighth(question)
     #generate answer function
     check_ans()
 
